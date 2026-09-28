@@ -38,6 +38,35 @@
             </p>
         </section>
 
+        <!-- Campus & Faculty Imagery Showcase -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-white group">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="{{ asset('images/campus-hero.jpg') }}" alt="Olympia Education Campus Atrium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[11px] font-bold px-2.5 py-1 rounded-full">
+                        Modern Campus Facilities
+                    </span>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-slate-900 text-sm">Dynamic Higher Education Environment</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">State-of-the-art interactive auditoriums, collaborative learning lounges, and research facilities across Malaysia.</p>
+                </div>
+            </div>
+
+            <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-white group">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="{{ asset('images/academic-team.jpg') }}" alt="Olympia Academic Leadership & Faculty" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[11px] font-bold px-2.5 py-1 rounded-full">
+                        Academic Excellence
+                    </span>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-slate-900 text-sm">Collaborative Faculty & Leadership</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">Passionate educators, researchers, and mentors shaping the next generation of professional talent.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-3">
                 <div class="w-10 h-10 rounded-xl bg-blue-900 text-amber-400 flex items-center justify-center font-bold">

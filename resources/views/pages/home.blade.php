@@ -59,48 +59,47 @@
                     </div>
                 </div>
 
-                <!-- Hero Right: Visual & Key Metric Highlights -->
+                <!-- Hero Right: Real Campus Visual & Highlights -->
                 <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <!-- Stat Card 1 -->
-                        <div class="bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-xl border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
-                            <div class="flex items-center justify-between border-b border-slate-700/60 pb-5">
-                                <div>
-                                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Recruitment At A Glance</div>
-                                    <div class="text-xl font-bold text-white mt-1">Olympia Career Portal</div>
-                                </div>
-                                <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                                    <i data-lucide="sparkles" class="w-5 h-5"></i>
-                                </div>
+                    <div class="relative mx-auto max-w-lg lg:max-w-none">
+                        <!-- Campus Photo Frame with Glow & Glass Badges -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-700/60 group">
+                            <img src="{{ asset('images/campus-hero.jpg') }}" alt="Olympia Education Campus Life & Collaboration"
+                                 class="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-700">
+
+                            <!-- Gradient Vignette -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+
+                            <!-- Top Floating Badge -->
+                            <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-[11px] font-bold text-amber-400 border border-slate-700/80 shadow-md">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>Petaling Jaya Campus &bull; Malaysia</span>
+                                </span>
+                                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-950/80 backdrop-blur-md text-[11px] font-semibold text-blue-300 border border-blue-800/60 shadow-md">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-400"></i>
+                                    <span>Private CV Storage</span>
+                                </span>
                             </div>
 
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800">
-                                    <div class="text-2xl font-extrabold text-amber-400">{{ \App\Models\JobVacancy::open()->count() }}</div>
-                                    <div class="text-xs font-medium text-slate-400 mt-1">Open Positions</div>
+                            <!-- Bottom Overlay Card with Live Metrics -->
+                            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 shadow-xl space-y-3">
+                                <div class="flex items-center justify-between text-xs border-b border-slate-700/60 pb-2">
+                                    <span class="font-bold text-white uppercase tracking-wider text-[11px]">Olympia Career Snapshot</span>
+                                    <span class="text-amber-400 font-semibold">{{ \App\Models\JobVacancy::open()->count() }} Openings</span>
                                 </div>
-                                <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800">
-                                    <div class="text-2xl font-extrabold text-blue-400">{{ $typeCounts['Internship'] ?? 0 }}</div>
-                                    <div class="text-xs font-medium text-slate-400 mt-1">Intern Placements</div>
-                                </div>
-                                <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800">
-                                    <div class="text-2xl font-extrabold text-emerald-400">100%</div>
-                                    <div class="text-xs font-medium text-slate-400 mt-1">Digital Processing</div>
-                                </div>
-                                <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800">
-                                    <div class="text-2xl font-extrabold text-purple-400">24/7</div>
-                                    <div class="text-xs font-medium text-slate-400 mt-1">Status Tracking</div>
-                                </div>
-                            </div>
-
-                            <div class="p-4 rounded-2xl bg-gradient-to-r from-blue-950/60 to-slate-900 border border-blue-800/40 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-blue-600/30 text-blue-300 flex items-center justify-center">
-                                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                <div class="grid grid-cols-3 gap-2 text-center">
+                                    <div class="p-2 rounded-xl bg-slate-950/60 border border-slate-800">
+                                        <div class="text-base font-extrabold text-amber-400">{{ \App\Models\JobVacancy::open()->count() }}</div>
+                                        <div class="text-[10px] text-slate-400">Vacancies</div>
                                     </div>
-                                    <div class="text-xs">
-                                        <div class="font-semibold text-white">Private Storage Guaranteed</div>
-                                        <div class="text-slate-400">Secure resume & CV management</div>
+                                    <div class="p-2 rounded-xl bg-slate-950/60 border border-slate-800">
+                                        <div class="text-base font-extrabold text-blue-400">{{ $typeCounts['Internship'] ?? 0 }}</div>
+                                        <div class="text-[10px] text-slate-400">Internships</div>
+                                    </div>
+                                    <div class="p-2 rounded-xl bg-slate-950/60 border border-slate-800">
+                                        <div class="text-base font-extrabold text-emerald-400">100%</div>
+                                        <div class="text-[10px] text-slate-400">Trackable</div>
                                     </div>
                                 </div>
                             </div>
@@ -301,35 +300,33 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-blue-900 text-amber-400 flex items-center justify-center">
-                        <i data-lucide="award" class="w-6 h-6"></i>
+            <!-- Culture & Team Visual Feature -->
+            <div class="mt-12 rounded-3xl overflow-hidden border border-slate-200/90 shadow-md bg-white grid grid-cols-1 lg:grid-cols-12 items-center">
+                <div class="lg:col-span-7 h-72 sm:h-80 lg:h-96 relative overflow-hidden group">
+                    <img src="{{ asset('images/academic-team.jpg') }}" alt="Olympia Education Academic Committee and Faculty Collaboration"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full border border-slate-700">
+                        Academic Strategy & Curriculum Committee Session
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Academic & Professional Development</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Continuous opportunities for pedagogical upskilling, conference attendance, technical certifications, and curriculum leadership training.
-                    </p>
                 </div>
-
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center">
-                        <i data-lucide="users" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900">Collaborative & Inclusive Culture</h3>
+                <div class="lg:col-span-5 p-8 sm:p-10 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Educational Leadership</span>
+                    <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">
+                        A Culture Built on Mentorship & Collegiality
+                    </h3>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                        A multidisciplinary campus atmosphere where academic faculties, administrative departments, and student services work harmoniously.
+                        At Olympia Education, faculty members, researchers, and professional administrators collaborate daily across faculties to modernize course delivery, student support, and academic quality assurance.
                     </p>
-                </div>
-
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center">
-                        <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                    <div class="pt-2 flex items-center gap-4 text-xs font-semibold text-blue-900">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                            <span>Pedagogical Mentorship</span>
+                        </span>
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                            <span>Industry Linkages</span>
+                        </span>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Purpose-Driven Impact</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Play an active role in nurturing undergraduate talent and launching rewarding careers for thousands of Malaysian and international students.
-                    </p>
                 </div>
             </div>
         </div>

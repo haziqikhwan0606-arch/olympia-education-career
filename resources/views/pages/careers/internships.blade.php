@@ -5,19 +5,45 @@
 
 @section('content')
     <!-- Internship Hero Banner -->
-    <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-orange-600 text-slate-950 py-16">
+    <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 text-white py-16 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl space-y-4">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-slate-950 text-amber-400">
-                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
-                    <span>University Internship Programs</span>
-                </span>
-                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 leading-tight">
-                    Launch Your Professional Journey at Olympia
-                </h1>
-                <p class="text-base text-slate-900 leading-relaxed font-medium">
-                    Bridge classroom theory with real-world industry practice. Gain direct mentorship from education leaders, build portfolio projects, and earn accredited internship hours.
-                </p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-4">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-amber-500 text-slate-950">
+                        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                        <span>University Internship Programs</span>
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                        Launch Your Professional Career with <span class="text-amber-400">Olympia</span>
+                    </h1>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                        Bridge academic theory with real-world industry practice. Gain direct mentorship from educators and senior engineers, build portfolio projects, and earn accredited university internship credits.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-300 pt-2">
+                        <span class="flex items-center gap-1.5 text-amber-400">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i>
+                            <span>Monthly Stipend / Allowance</span>
+                        </span>
+                        <span class="flex items-center gap-1.5 text-emerald-400">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i>
+                            <span>University Accreditation Approved</span>
+                        </span>
+                        <span class="flex items-center gap-1.5 text-blue-400">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i>
+                            <span>Direct Mentor Pairing</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-700 group">
+                        <img src="{{ asset('images/internship-lab.jpg') }}" alt="Olympia Education Student Interns Collaborating in Computing Lab"
+                             class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[11px] font-bold px-3 py-1 rounded-full border border-slate-700">
+                            Student Lab & Creative Computing Placement
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
