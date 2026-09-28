@@ -14,10 +14,10 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <!-- Hero Left: Text & CTAs -->
-                <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-800/90 border border-slate-700/80 text-xs font-semibold text-amber-400 shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>Olympia Education Malaysia &bull; Career & Recruitment Portal</span>
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-semibold text-amber-400">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                        <span>Now Hiring &bull; Academic &bull; Professional &bull; Internships</span>
                     </div>
 
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
@@ -32,8 +32,8 @@
                     </p>
 
                     <!-- Interactive Quick Search Bar -->
-                    <form action="{{ route('careers.index') }}" method="GET" class="pt-2 max-w-xl mx-auto lg:mx-0">
-                        <div class="p-2.5 bg-slate-900/90 backdrop-blur-md rounded-2xl border border-slate-700/80 shadow-2xl flex flex-col sm:flex-row gap-2">
+                    <form action="{{ route('careers.index') }}" method="GET" class="pt-4 max-w-xl mx-auto lg:mx-0">
+                        <div class="p-2 bg-slate-900/90 backdrop-blur-md rounded-2xl border border-slate-700/80 shadow-2xl flex flex-col sm:flex-row gap-2">
                             <div class="flex-1 relative flex items-center pl-3">
                                 <i data-lucide="search" class="w-5 h-5 text-slate-400"></i>
                                 <input type="text" name="search" placeholder="Job title, skill, or keyword..."
@@ -47,7 +47,7 @@
                     </form>
 
                     <!-- CTAs -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
                         <a href="{{ route('careers.index') }}" class="px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-600 text-white font-semibold text-sm transition-all shadow-lg shadow-blue-900/30 flex items-center gap-2 border border-blue-500/30">
                             <i data-lucide="briefcase" class="w-4 h-4"></i>
                             <span>Explore All Vacancies</span>
@@ -65,20 +65,20 @@
                         <!-- Campus Photo Frame with Glow & Glass Badges -->
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-700/60 group">
                             <img src="{{ asset('images/campus-hero.jpg') }}" alt="Olympia Education Campus Life & Collaboration"
-                                 class="w-full h-96 sm:h-[430px] object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                                 class="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-700">
 
                             <!-- Gradient Vignette -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
 
                             <!-- Top Floating Badge -->
                             <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md text-[11px] font-bold text-amber-400 border border-slate-700/80 shadow-md">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-[11px] font-bold text-amber-400 border border-slate-700/80 shadow-md">
                                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                                     <span>Petaling Jaya Campus &bull; Malaysia</span>
                                 </span>
-                                <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-blue-950/85 backdrop-blur-md text-[11px] font-semibold text-blue-300 border border-blue-800/60 shadow-md">
+                                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-950/80 backdrop-blur-md text-[11px] font-semibold text-blue-300 border border-blue-800/60 shadow-md">
                                     <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-400"></i>
-                                    <span>Private Storage</span>
+                                    <span>Private CV Storage</span>
                                 </span>
                             </div>
 
@@ -111,82 +111,74 @@
     </section>
 
     <!-- Career Categories -->
-    <section class="py-20 lg:py-24 bg-white border-b border-slate-200">
+    <section class="py-16 bg-white border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
                 <div>
                     <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Career Pathways</span>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Explore Opportunity Types</h2>
                 </div>
-                <p class="text-sm text-slate-500 max-w-md mt-2 md:mt-0 leading-relaxed">
+                <p class="text-sm text-slate-500 max-w-md mt-2 md:mt-0">
                     Find the career arrangement that matches your aspirations, from leadership lecturing roles to structured student internships.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Full-Time -->
-                <a href="{{ route('careers.index', ['type' => 'Full-Time']) }}" class="group p-7 rounded-2xl bg-slate-50 hover:bg-blue-50/50 border border-slate-200/80 hover:border-blue-200 transition-all duration-200 shadow-2xs hover:shadow-md flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-blue-900 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                            <i data-lucide="briefcase" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-900">Full-Time Careers</h3>
-                        <p class="text-xs text-slate-500 mt-2 leading-relaxed">
-                            Academic faculty, corporate specialists, and campus management roles.
-                        </p>
+                <a href="{{ route('careers.index', ['type' => 'Full-Time']) }}" class="group p-6 rounded-2xl bg-slate-50 hover:bg-blue-50/50 border border-slate-200/80 hover:border-blue-200 transition-all duration-200 shadow-2xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-blue-900 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-blue-900">
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-900">Full-Time Careers</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                        Academic faculty, corporate specialists, and campus management roles.
+                    </p>
+                    <div class="mt-4 flex items-center justify-between text-xs font-semibold text-blue-900">
                         <span>{{ $typeCounts['Full-Time'] ?? 0 }} Available</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </div>
                 </a>
 
                 <!-- Internship -->
-                <a href="{{ route('internships') }}" class="group p-7 rounded-2xl bg-slate-50 hover:bg-amber-50/50 border border-slate-200/80 hover:border-amber-200 transition-all duration-200 shadow-2xs hover:shadow-md flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-700">Undergraduate Internships</h3>
-                        <p class="text-xs text-slate-500 mt-2 leading-relaxed">
-                            Structured university-accredited training programs across faculties.
-                        </p>
+                <a href="{{ route('internships') }}" class="group p-6 rounded-2xl bg-slate-50 hover:bg-amber-50/50 border border-slate-200/80 hover:border-amber-200 transition-all duration-200 shadow-2xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-amber-700">
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-700">Undergraduate Internships</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                        Structured university-accredited training programs across faculties.
+                    </p>
+                    <div class="mt-4 flex items-center justify-between text-xs font-semibold text-amber-700">
                         <span>{{ $typeCounts['Internship'] ?? 0 }} Placements</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </div>
                 </a>
 
                 <!-- Part-Time -->
-                <a href="{{ route('careers.index', ['type' => 'Part-Time']) }}" class="group p-7 rounded-2xl bg-slate-50 hover:bg-emerald-50/50 border border-slate-200/80 hover:border-emerald-200 transition-all duration-200 shadow-2xs hover:shadow-md flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                            <i data-lucide="clock" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700">Part-Time & Adjunct</h3>
-                        <p class="text-xs text-slate-500 mt-2 leading-relaxed">
-                            Flexible guest lecturing, tutoring, and campus event coordination.
-                        </p>
+                <a href="{{ route('careers.index', ['type' => 'Part-Time']) }}" class="group p-6 rounded-2xl bg-slate-50 hover:bg-emerald-50/50 border border-slate-200/80 hover:border-emerald-200 transition-all duration-200 shadow-2xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-emerald-700">
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700">Part-Time & Adjunct</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                        Flexible guest lecturing, tutoring, and campus event coordination.
+                    </p>
+                    <div class="mt-4 flex items-center justify-between text-xs font-semibold text-emerald-700">
                         <span>{{ $typeCounts['Part-Time'] ?? 0 }} Positions</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </div>
                 </a>
 
                 <!-- Contract -->
-                <a href="{{ route('careers.index', ['type' => 'Contract']) }}" class="group p-7 rounded-2xl bg-slate-50 hover:bg-purple-50/50 border border-slate-200/80 hover:border-purple-200 transition-all duration-200 shadow-2xs hover:shadow-md flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                            <i data-lucide="file-badge" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-purple-700">Project & Contract</h3>
-                        <p class="text-xs text-slate-500 mt-2 leading-relaxed">
-                            Specialized institutional initiatives, EdTech rollouts, and research.
-                        </p>
+                <a href="{{ route('careers.index', ['type' => 'Contract']) }}" class="group p-6 rounded-2xl bg-slate-50 hover:bg-purple-50/50 border border-slate-200/80 hover:border-purple-200 transition-all duration-200 shadow-2xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="file-badge" class="w-6 h-6"></i>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-purple-700">
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-purple-700">Project & Contract</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                        Specialized institutional initiatives, EdTech rollouts, and research.
+                    </p>
+                    <div class="mt-4 flex items-center justify-between text-xs font-semibold text-purple-700">
                         <span>{{ $typeCounts['Contract'] ?? 0 }} Roles</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </div>
@@ -196,7 +188,7 @@
     </section>
 
     <!-- Featured Opportunities Section -->
-    <section class="py-24 bg-slate-50">
+    <section class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
                 <div>

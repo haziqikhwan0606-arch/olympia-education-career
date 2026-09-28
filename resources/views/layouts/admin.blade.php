@@ -28,12 +28,17 @@
             <!-- Sidebar Header / Branding -->
             <div class="h-20 px-6 flex items-center justify-between border-b border-slate-800/80 bg-slate-950">
                 <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3">
-                    <div class="bg-white p-1.5 rounded-lg shadow-sm">
-                        <img src="{{ asset('images/logo.png') }}" alt="Olympia Education Malaysia" class="h-7 w-auto object-contain">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-slate-950 font-black text-lg shadow-md shadow-amber-500/20">
+                        O
                     </div>
-                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-extrabold bg-amber-500/20 text-amber-400 border border-amber-500/30 uppercase tracking-wider">
-                        HR Portal
-                    </span>
+                    <div>
+                        <div class="font-bold text-base tracking-tight text-white leading-tight">
+                            OLYMPIA <span class="text-amber-400">HR</span>
+                        </div>
+                        <div class="text-[11px] uppercase tracking-wider font-semibold text-slate-400">
+                            Recruitment Portal
+                        </div>
+                    </div>
                 </a>
 
                 <button @click="sidebarOpen = false" class="lg:hidden text-slate-400 hover:text-white p-1 rounded-md">
