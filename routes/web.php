@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/careers', [JobController::class, 'index'])->name('careers.index');
 Route::get('/internships', [JobController::class, 'internships'])->name('internships');
+Route::redirect('/careers/internships', '/internships');
 Route::get('/careers/{slug}', [JobController::class, 'show'])->name('careers.show');
 
 // Online Application System
