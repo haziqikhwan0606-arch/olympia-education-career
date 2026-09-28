@@ -68,77 +68,94 @@
         </div>
 
         <!-- Applicants Table -->
-        <div class="bg-white rounded-3xl border border-slate-200 shadow-2xs overflow-hidden">
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-2xs overflow-hidden">
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs">
-                    <thead class="bg-slate-50 text-slate-500 uppercase tracking-wider font-semibold border-b border-slate-200">
+                    <thead class="bg-slate-50/90 text-slate-500 uppercase tracking-wider font-semibold border-b border-slate-200">
                         <tr>
-                            <th class="py-3.5 px-4">Reference</th>
-                            <th class="py-3.5 px-4">Candidate Information</th>
-                            <th class="py-3.5 px-4">Applied Vacancy</th>
-                            <th class="py-3.5 px-4">Education</th>
-                            <th class="py-3.5 px-4">Status</th>
-                            <th class="py-3.5 px-4">Submitted</th>
-                            <th class="py-3.5 px-4 text-right">Actions</th>
+                            <th class="py-3 px-3 w-28">Reference</th>
+                            <th class="py-3 px-3">Candidate</th>
+                            <th class="py-3 px-3">Position Applied</th>
+                            <th class="py-3 px-3">Education</th>
+                            <th class="py-3 px-3 w-28">Status</th>
+                            <th class="py-3 px-3 w-24">Submitted</th>
+                            <th class="py-3 px-3 text-right w-28">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100">
                         @forelse ($applications as $app)
                             <tr class="hover:bg-slate-50/70 transition-colors">
                                 <!-- Reference -->
-                                <td class="py-3.5 px-4 font-mono font-bold text-amber-700">
-                                    {{ $app->reference_number }}
+                                <td class="py-2.5 px-3">
+                                    <div class="font-mono font-bold text-xs text-amber-700 tracking-tight whitespace-nowrap">{{ $app->reference_number }}</div>
+                                    <div class="text-[10px] text-slate-400 font-medium">{{ $app->application_type }}</div>
                                 </td>
 
                                 <!-- Candidate Info -->
-                                <td class="py-3.5 px-4 font-semibold text-slate-900">
-                                    <div>{{ $app->full_name }}</div>
-                                    <div class="text-[11px] text-slate-400 font-normal">{{ $app->email }} &bull; {{ $app->phone }}</div>
-                                    <div class="text-[10px] text-slate-400 font-normal">{{ $app->state }}</div>
+                                <td class="py-2.5 px-3">
+                                    <div class="font-semibold text-slate-900 leading-tight">{{ $app->full_name }}</div>
+                                    <div class="text-[11px] text-slate-500 truncate max-w-[190px]" title="{{ $app->email }}">{{ $app->email }}</div>
+                                    <div class="text-[10px] text-slate-400 leading-tight">{{ $app->phone }} &bull; {{ $app->state }}</div>
                                 </td>
 
                                 <!-- Vacancy Applied -->
-                                <td class="py-3.5 px-4 text-slate-700">
-                                    <div class="font-medium">{{ $app->jobVacancy?->title ?? 'General Position' }}</div>
-                                    <div class="text-[11px] text-slate-400">{{ $app->jobVacancy?->department ?? 'General' }} &bull; {{ $app->application_type }}</div>
+                                <td class="py-2.5 px-3">
+                                    <div class="font-medium text-slate-800 leading-snug line-clamp-1 max-w-[190px]" title="{{ $app->jobVacancy?->title ?? 'General Position' }}">
+                                        {{ $app->jobVacancy?->title ?? 'General Position' }}
+                                    </div>
+                                    <div class="text-[10px] text-slate-400">{{ $app->jobVacancy?->department ?? 'General' }}</div>
                                 </td>
 
                                 <!-- Education -->
-                                <td class="py-3.5 px-4 text-slate-600">
-                                    <div class="font-medium text-slate-800">{{ $app->highest_education }}</div>
-                                    <div class="text-[11px] text-slate-400 truncate max-w-xs">{{ $app->field_of_study }} ({{ $app->institution }})</div>
+                                <td class="py-2.5 px-3">
+                                    <div class="font-medium text-slate-800 leading-tight">{{ $app->highest_education }}</div>
+                                    <div class="text-[10px] text-slate-500 truncate max-w-[180px]" title="{{ $app->field_of_study }} ({{ $app->institution }})">
+                                        {{ $app->field_of_study ?: $app->institution }}
+                                    </div>
                                 </td>
 
                                 <!-- Status Badge -->
-                                <td class="py-3.5 px-4">
-                                    <span class="inline-flex px-2.5 py-0.5 rounded-full text-[11px] font-bold border {{ $app->status_badge_class }}">
+                                <td class="py-2.5 px-3 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold border {{ $app->status_badge_class }}">
                                         {{ $app->status }}
                                     </span>
                                 </td>
 
                                 <!-- Submission Date -->
-                                <td class="py-3.5 px-4 text-slate-500">
-                                    <div>{{ $app->created_at->format('d M Y') }}</div>
+                                <td class="py-2.5 px-3 whitespace-nowrap text-slate-500">
+                                    <div class="text-xs text-slate-700">{{ $app->created_at->format('d M Y') }}</div>
                                     <div class="text-[10px] text-slate-400">{{ $app->created_at->format('h:i A') }}</div>
                                 </td>
 
                                 <!-- Actions -->
-                                <td class="py-3.5 px-4 text-right">
-                                    <div class="flex items-center justify-end gap-2">
+                                <td class="py-2.5 px-3 text-right whitespace-nowrap">
+                                    <div class="flex items-center justify-end gap-1.5">
                                         <!-- Secure CV Download -->
                                         @if ($app->cv_path)
                                             <a href="{{ route('admin.applicants.download_cv', $app->id) }}" title="Download CV (PDF)"
-                                               class="p-1.5 text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors border border-blue-200">
-                                                <i data-lucide="file-down" class="w-4 h-4"></i>
+                                               class="p-1.5 text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors border border-blue-200 shrink-0">
+                                                <i data-lucide="file-down" class="w-3.5 h-3.5"></i>
                                             </a>
                                         @endif
 
                                         <!-- Review Details -->
-                                        <a href="{{ route('admin.applicants.show', $app->id) }}"
-                                           class="px-3 py-1.5 bg-blue-900 hover:bg-blue-950 text-white font-semibold rounded-lg text-xs transition-colors flex items-center gap-1">
+                                        <a href="{{ route('admin.applicants.show', $app->id) }}" title="Review Candidate"
+                                           class="px-2.5 py-1.5 bg-blue-900 hover:bg-blue-950 text-white font-semibold rounded-lg text-xs transition-colors flex items-center gap-1 shrink-0">
                                             <span>Review</span>
-                                            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                                            <i data-lucide="chevron-right" class="w-3 h-3"></i>
                                         </a>
+
+                                        <!-- Delete Withdrawn Application -->
+                                        @if (strtolower($app->status) === 'withdrawn')
+                                            <form action="{{ route('admin.applicants.destroy', $app->id) }}" method="POST" class="inline" onsubmit="return confirm('Permanently delete withdrawn application {{ $app->reference_number }} ({{ $app->full_name }})?');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" title="Delete Withdrawn Application"
+                                                        class="p-1.5 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg transition-colors border border-rose-200 shrink-0">
+                                                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                                                </button>
+                                            </form>
+                                        @endif
                                     </div>
                                 </td>
                             </tr>

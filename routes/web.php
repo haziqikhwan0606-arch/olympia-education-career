@@ -78,5 +78,6 @@ Route::prefix('admin')->group(function () {
         Route::patch('/applicants/{id}/status', [AdminApplicantController::class, 'updateStatus'])->name('admin.applicants.update_status');
         Route::patch('/applicants/{id}/notes', [AdminApplicantController::class, 'updateNotes'])->name('admin.applicants.update_notes');
         Route::post('/applicants/{id}/interview', [AdminApplicantController::class, 'scheduleInterview'])->name('admin.applicants.schedule_interview');
+        Route::delete('/applicants/{id}', [AdminApplicantController::class, 'destroy'])->name('admin.applicants.destroy');
     });
 });

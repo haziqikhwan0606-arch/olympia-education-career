@@ -116,4 +116,42 @@ class HrAdminWorkflowTest extends TestCase
         $response->assertStatus(200);
         $response->assertHeader('content-disposition');
     }
+
+    public function test_hr_admin_can_delete_withdrawn_application(): void
+    {
+        $admin = User::where('role', 'hr_admin')->first();
+        $application = Application::create([
+            'reference_number' => 'OEC-' . date('Y') . '-WD' . rand(1000, 9999),
+            'full_name' => 'Withdrawn Candidate',
+            'email' => 'withdrawn' . rand(100, 999) . '@example.com',
+            'phone' => '+6012-9999999',
+            'state' => 'Selangor',
+            'highest_education' => 'Bachelor\'s Degree',
+            'field_of_study' => 'Education',
+            'institution' => 'University',
+            'graduation_year' => '2024',
+            'application_type' => 'Full-Time',
+            'cv_path' => 'cvs/test_cv.pdf',
+            'cv_original_name' => 'test_cv.pdf',
+            'interest_reason' => 'Passionate about education.',
+            'privacy_consent' => true,
+            'status' => 'Withdrawn',
+            'access_token' => 'dummytoken' . rand(10000, 99999),
+        ]);
+
+        $response = $this->actingAs($admin)->delete('/admin/applicants/' . $application->id);
+        $response->assertRedirect('/admin/applicants');
+        $this->assertDatabaseMissing('applications', ['id' => $application->id]);
+    }
+
+    public function test_hr_admin_cannot_delete_active_non_withdrawn_application(): void
+    {
+        $admin = User::where('role', 'hr_admin')->first();
+        $application = Application::where('status', '!=', 'Withdrawn')->first();
+        $this->assertNotNull($application);
+
+        $response = $this->actingAs($admin)->delete('/admin/applicants/' . $application->id);
+        $response->assertSessionHas('error');
+        $this->assertDatabaseHas('applications', ['id' => $application->id]);
+    }
 }

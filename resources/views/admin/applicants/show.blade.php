@@ -37,6 +37,16 @@
                         <span>Cover Letter</span>
                     </a>
                 @endif
+                @if (strtolower($application->status) === 'withdrawn')
+                    <form action="{{ route('admin.applicants.destroy', $application->id) }}" method="POST" class="inline" onsubmit="return confirm('Permanently delete withdrawn application {{ $application->reference_number }} ({{ $application->full_name }})?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="px-4 py-2.5 bg-rose-50 hover:bg-rose-100 text-rose-700 font-semibold text-xs rounded-xl transition-colors flex items-center gap-1.5 border border-rose-200 shadow-xs">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            <span>Delete Application</span>
+                        </button>
+                    </form>
+                @endif
             </div>
         </div>
 

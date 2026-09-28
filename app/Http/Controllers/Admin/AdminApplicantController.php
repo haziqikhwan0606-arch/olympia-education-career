@@ -244,4 +244,29 @@ class AdminApplicantController extends Controller
 
         return back()->with('success', 'Interview session scheduled successfully and logged.');
     }
+
+    public function destroy(int $id): RedirectResponse
+    {
+        $application = Application::findOrFail($id);
+
+        if (strtolower($application->status) !== 'withdrawn') {
+            return back()->with('error', 'Only withdrawn applications can be deleted.');
+        }
+
+        $ref = $application->reference_number;
+        $name = $application->full_name;
+
+        // Clean up storage files if present
+        if ($application->cv_path && Storage::disk('local')->exists($application->cv_path)) {
+            Storage::disk('local')->delete($application->cv_path);
+        }
+
+        if ($application->cover_letter_path && Storage::disk('local')->exists($application->cover_letter_path)) {
+            Storage::disk('local')->delete($application->cover_letter_path);
+        }
+
+        $application->forceDelete();
+
+        return redirect()->route('admin.applicants.index')->with('success', "Withdrawn application {$ref} ({$name}) has been permanently deleted.");
+    }
 }

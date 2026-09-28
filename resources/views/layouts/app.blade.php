@@ -22,10 +22,8 @@
     <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
             <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">
-                    Prototype Demo
-                </span>
-                <span>Olympia Education Malaysia &bull; Standalone Career & Recruitment Prototype</span>
+                <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-400"></i>
+                <span class="text-slate-300">Olympia Education Malaysia &bull; Career &amp; Recruitment Portal</span>
             </div>
             <div class="flex items-center gap-4 text-slate-400">
                 <a href="{{ route('tracking.index') }}" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
@@ -48,16 +46,11 @@
                 <!-- Brand Logo / Treatment -->
                 <a href="{{ route('home') }}" class="flex items-center gap-3.5 group">
                     <img src="{{ asset('images/logo.png') }}" alt="Olympia Education Malaysia" class="h-10 sm:h-11 w-auto object-contain">
-                    <span class="sr-only">OLYMPIA CAREER</span>
+                    <span class="sr-only">OLYMPIA</span>
                     <span class="hidden sm:inline-block h-6 w-px bg-slate-200"></span>
-                    <div class="hidden sm:flex flex-col">
-                        <span class="text-sm font-bold tracking-tight text-slate-800 leading-tight">
-                            CAREER <span class="text-amber-600 font-extrabold">PORTAL</span>
-                        </span>
-                        <span class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">
-                            Recruitment &amp; Talent
-                        </span>
-                    </div>
+                    <span class="hidden sm:inline-block text-xs font-bold uppercase tracking-wider text-slate-700">
+                        Career Portal
+                    </span>
                 </a>
 
                 <!-- Desktop Navigation Links -->
@@ -169,7 +162,7 @@
                     </p>
                     <div class="pt-2 text-xs text-slate-400 flex items-center gap-2">
                         <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>Campus Recruitment Portal (Standalone Prototype)</span>
+                        <span>Campus Recruitment Portal</span>
                     </div>
                 </div>
 
@@ -223,7 +216,7 @@
                     <a href="{{ route('privacy.notice') }}" class="hover:text-white transition-colors">Candidate Privacy Policy</a>
                     <a href="{{ route('contact') }}" class="hover:text-white transition-colors">Contact Support</a>
                     <span class="text-slate-700">&bull;</span>
-                    <span class="text-slate-400">Evaluation Prototype for Management Review</span>
+                    <span class="text-slate-400">Olympia Education Malaysia</span>
                 </div>
             </div>
         </div>

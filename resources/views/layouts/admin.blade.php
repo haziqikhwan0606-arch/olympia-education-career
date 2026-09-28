@@ -143,7 +143,7 @@
             </header>
 
             <!-- Admin Alerts -->
-            <div class="px-6 sm:px-8 pt-6">
+            <div class="px-4 sm:px-6 lg:px-8 pt-6">
                 @if (session('success'))
                     <div class="mb-6 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-emerald-800 flex items-start gap-3 shadow-xs">
                         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
@@ -167,7 +167,7 @@
             </div>
 
             <!-- Page Content -->
-            <main class="flex-1 px-6 sm:px-8 pb-16">
+            <main class="flex-1 px-4 sm:px-6 lg:px-8 pb-16">
                 @yield('content')
             </main>
         </div>
