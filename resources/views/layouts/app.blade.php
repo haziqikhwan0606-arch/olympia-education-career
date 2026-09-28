@@ -18,17 +18,22 @@
 </head>
 <body class="flex min-h-full flex-col font-sans text-slate-800 bg-slate-50" x-data="{ mobileMenuOpen: false }">
 
-    <!-- Top Bar -->
-    <div class="bg-slate-950 text-slate-400 text-xs py-1.5 px-4 border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Top Announcement Bar -->
+    <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
             <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span class="text-slate-300 font-medium">Olympia Education Malaysia</span>
-                <span class="hidden sm:inline text-slate-600">&bull;</span>
-                <span class="hidden sm:inline text-slate-400">Talent Acquisition & Career Portal</span>
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                    Prototype Demo
+                </span>
+                <span>Olympia Education Malaysia &bull; Standalone Career & Recruitment Prototype</span>
             </div>
-            <div class="flex items-center gap-3">
-                <a href="{{ route('admin.login') }}" class="hover:text-amber-400 transition-colors flex items-center gap-1 text-[11px] font-medium text-slate-400">
+            <div class="flex items-center gap-4 text-slate-400">
+                <a href="{{ route('tracking.index') }}" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                    <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+                    <span>Track Application</span>
+                </a>
+                <span class="text-slate-700">|</span>
+                <a href="{{ route('admin.login') }}" class="hover:text-white transition-colors flex items-center gap-1 text-[11px] font-medium text-slate-400">
                     <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-500"></i>
                     <span>HR Staff Portal</span>
                 </a>
@@ -37,44 +42,44 @@
     </div>
 
     <!-- Main Navigation Bar -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xs">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-18">
-                <!-- Brand Logo -->
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo / Treatment -->
                 <a href="{{ route('home') }}" class="flex items-center gap-3 group">
-                    <img src="{{ asset('images/logo.png') }}" alt="Olympia Education Malaysia" class="h-10 w-auto object-contain transition-opacity duration-200 group-hover:opacity-90">
+                    <img src="{{ asset('images/logo.png') }}" alt="Olympia Education Malaysia" class="h-11 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105">
                     <span class="sr-only">OLYMPIA CAREER</span>
-                    <span class="hidden md:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-slate-100 text-slate-700 uppercase tracking-wider">
-                        Careers
+                    <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-700 border border-amber-500/20 uppercase tracking-wider">
+                        Career Portal
                     </span>
                 </a>
 
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
-                    <a href="{{ route('home') }}" class="transition-colors hover:text-slate-900 {{ request()->routeIs('home') ? 'text-slate-900 font-semibold' : '' }}">
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                    <a href="{{ route('home') }}" class="transition-colors hover:text-blue-900 {{ request()->routeIs('home') ? 'text-blue-900 font-bold border-b-2 border-amber-500 pb-1' : '' }}">
                         Home
                     </a>
-                    <a href="{{ route('careers.index') }}" class="transition-colors hover:text-slate-900 {{ request()->routeIs('careers.*') && !request()->routeIs('internships') ? 'text-slate-900 font-semibold' : '' }}">
+                    <a href="{{ route('careers.index') }}" class="transition-colors hover:text-blue-900 {{ request()->routeIs('careers.*') && !request()->routeIs('internships') ? 'text-blue-900 font-bold border-b-2 border-amber-500 pb-1' : '' }}">
                         Find Jobs
                     </a>
-                    <a href="{{ route('internships') }}" class="transition-colors hover:text-slate-900 {{ request()->routeIs('internships') ? 'text-slate-900 font-semibold' : '' }}">
+                    <a href="{{ route('internships') }}" class="transition-colors hover:text-blue-900 {{ request()->routeIs('internships') ? 'text-blue-900 font-bold border-b-2 border-amber-500 pb-1' : '' }}">
                         Internships
                     </a>
-                    <a href="{{ route('about') }}" class="transition-colors hover:text-slate-900 {{ request()->routeIs('about') ? 'text-slate-900 font-semibold' : '' }}">
+                    <a href="{{ route('about') }}" class="transition-colors hover:text-blue-900 {{ request()->routeIs('about') ? 'text-blue-900 font-bold border-b-2 border-amber-500 pb-1' : '' }}">
                         About Us
                     </a>
-                    <a href="{{ route('contact') }}" class="transition-colors hover:text-slate-900 {{ request()->routeIs('contact') ? 'text-slate-900 font-semibold' : '' }}">
+                    <a href="{{ route('contact') }}" class="transition-colors hover:text-blue-900 {{ request()->routeIs('contact') ? 'text-blue-900 font-bold border-b-2 border-amber-500 pb-1' : '' }}">
                         Contact
                     </a>
                 </nav>
 
                 <!-- Header Actions -->
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="{{ route('tracking.index') }}" class="text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5">
-                        <i data-lucide="compass" class="w-3.5 h-3.5 text-slate-400"></i>
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="{{ route('tracking.index') }}" class="px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5 border border-slate-200">
+                        <i data-lucide="search" class="w-3.5 h-3.5 text-slate-500"></i>
                         <span>Track Application</span>
                     </a>
-                    <a href="{{ route('careers.index') }}" class="px-4 py-2 text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-xl shadow-xs transition-colors flex items-center gap-1.5">
+                    <a href="{{ route('careers.index') }}" class="px-4 py-2 text-xs font-semibold text-white bg-blue-900 hover:bg-blue-950 rounded-lg shadow-sm hover:shadow transition-all flex items-center gap-1.5">
                         <span>Explore Roles</span>
                         <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-amber-400"></i>
                     </a>
