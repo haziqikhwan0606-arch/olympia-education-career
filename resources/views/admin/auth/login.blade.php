@@ -15,16 +15,18 @@
 
     <div class="w-full max-w-md space-y-8">
         <!-- Logo Treatment -->
-        <div class="text-center space-y-2">
-            <div class="inline-flex w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 items-center justify-center text-slate-950 font-black text-2xl shadow-xl shadow-amber-500/20">
-                O
+        <div class="text-center space-y-3">
+            <a href="{{ route('home') }}" class="inline-block group" title="Return to Careers Portal">
+                <img src="{{ asset('images/logo-white.png') }}" alt="Olympia Education Malaysia" class="h-12 w-auto mx-auto object-contain group-hover:scale-105 transition-transform duration-200">
+            </a>
+            <div>
+                <h1 class="text-xl font-bold tracking-tight text-white">
+                    OLYMPIA HR <span class="text-amber-400">PORTAL</span>
+                </h1>
+                <p class="text-xs text-slate-400 mt-1">
+                    Olympia Education Malaysia &bull; Recruitment Administration
+                </p>
             </div>
-            <h1 class="text-2xl font-black tracking-tight text-white">
-                OLYMPIA <span class="text-amber-400">HR PORTAL</span>
-            </h1>
-            <p class="text-xs text-slate-400">
-                Olympia Education Malaysia &bull; Recruitment Administration
-            </p>
         </div>
 
         <!-- Login Form Card -->

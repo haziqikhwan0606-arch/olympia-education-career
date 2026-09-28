@@ -47,15 +47,15 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Brand Logo / Treatment -->
                 <a href="{{ route('home') }}" class="flex items-center gap-3.5 group">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 flex items-center justify-center text-white shadow-md shadow-blue-950/20 group-hover:scale-105 transition-transform duration-200 border border-slate-700/30">
-                        <span class="font-extrabold text-xl tracking-tight text-amber-400">O</span>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-lg font-bold tracking-tight text-slate-900 leading-tight">
-                            OLYMPIA <span class="text-amber-600 font-extrabold">CAREER</span>
+                    <img src="{{ asset('images/logo.png') }}" alt="Olympia Education Malaysia" class="h-10 sm:h-11 w-auto object-contain">
+                    <span class="sr-only">OLYMPIA CAREER</span>
+                    <span class="hidden sm:inline-block h-6 w-px bg-slate-200"></span>
+                    <div class="hidden sm:flex flex-col">
+                        <span class="text-sm font-bold tracking-tight text-slate-800 leading-tight">
+                            CAREER <span class="text-amber-600 font-extrabold">PORTAL</span>
                         </span>
-                        <span class="text-[11px] uppercase tracking-wider font-semibold text-slate-500">
-                            Olympia Education Malaysia
+                        <span class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">
+                            Recruitment &amp; Talent
                         </span>
                     </div>
                 </a>
@@ -160,12 +160,9 @@
                 <!-- Brand Column -->
                 <div class="lg:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-lg bg-amber-500 flex items-center justify-center text-slate-900 font-extrabold text-lg">
-                            O
-                        </div>
-                        <span class="text-xl font-bold tracking-tight text-white">
-                            OLYMPIA <span class="text-amber-400">CAREER</span>
-                        </span>
+                        <img src="{{ asset('images/logo-white.png') }}" alt="Olympia Education Malaysia" class="h-9 w-auto object-contain">
+                        <span class="hidden sm:inline-block h-5 w-px bg-slate-700"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Career Portal</span>
                     </div>
                     <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
                         Discover Your Next Opportunity. Build Your Future With Olympia. Join a community dedicated to academic distinction, student transformation, and educational leadership across Malaysia.
