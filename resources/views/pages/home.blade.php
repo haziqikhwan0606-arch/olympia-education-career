@@ -15,9 +15,14 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <!-- Hero Left: Text & CTAs -->
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-semibold text-amber-400">
-                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-                        <span>Now Hiring &bull; Academic &bull; Professional &bull; Internships</span>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                        <div class="bg-white px-3 py-1.5 rounded-xl shadow-sm border border-slate-200 inline-flex items-center">
+                            <img src="{{ asset('images/logo.png') }}" alt="Olympia Education Malaysia" class="h-7 w-auto object-contain">
+                        </div>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-slate-700/80 text-xs font-semibold text-amber-400">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Talent Acquisition &bull; Malaysia</span>
+                        </div>
                     </div>
 
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">

@@ -46,18 +46,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Brand Logo / Treatment -->
-                <a href="{{ route('home') }}" class="flex items-center gap-3.5 group">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 flex items-center justify-center text-white shadow-md shadow-blue-950/20 group-hover:scale-105 transition-transform duration-200 border border-slate-700/30">
-                        <span class="font-extrabold text-xl tracking-tight text-amber-400">O</span>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-lg font-bold tracking-tight text-slate-900 leading-tight">
-                            OLYMPIA <span class="text-amber-600 font-extrabold">CAREER</span>
-                        </span>
-                        <span class="text-[11px] uppercase tracking-wider font-semibold text-slate-500">
-                            Olympia Education Malaysia
-                        </span>
-                    </div>
+                <a href="{{ route('home') }}" class="flex items-center gap-3 group">
+                    <img src="{{ asset('images/logo.png') }}" alt="Olympia Education Malaysia" class="h-11 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105">
+                    <span class="sr-only">OLYMPIA CAREER</span>
+                    <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-700 border border-amber-500/20 uppercase tracking-wider">
+                        Career Portal
+                    </span>
                 </a>
 
                 <!-- Desktop Navigation Links -->
@@ -159,12 +153,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
                 <!-- Brand Column -->
                 <div class="lg:col-span-2 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-lg bg-amber-500 flex items-center justify-center text-slate-900 font-extrabold text-lg">
-                            O
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                        <div class="bg-white p-2 rounded-xl inline-block shadow-sm">
+                            <img src="{{ asset('images/logo.png') }}" alt="Olympia Education Malaysia" class="h-9 w-auto object-contain">
                         </div>
-                        <span class="text-xl font-bold tracking-tight text-white">
-                            OLYMPIA <span class="text-amber-400">CAREER</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">
+                            Career Portal
                         </span>
                     </div>
                     <p class="text-sm text-slate-400 leading-relaxed max-w-sm">

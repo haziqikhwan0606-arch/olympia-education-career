@@ -15,9 +15,9 @@
 
     <div class="w-full max-w-md space-y-8">
         <!-- Logo Treatment -->
-        <div class="text-center space-y-2">
-            <div class="inline-flex w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 items-center justify-center text-slate-950 font-black text-2xl shadow-xl shadow-amber-500/20">
-                O
+        <div class="text-center space-y-3">
+            <div class="inline-block bg-white p-3.5 rounded-2xl shadow-xl border border-slate-700/50">
+                <img src="{{ asset('images/logo.png') }}" alt="Olympia Education Malaysia" class="h-12 w-auto object-contain">
             </div>
             <h1 class="text-2xl font-black tracking-tight text-white">
                 OLYMPIA <span class="text-amber-400">HR PORTAL</span>
